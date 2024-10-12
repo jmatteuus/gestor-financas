@@ -1,4 +1,4 @@
-window.onload = function recuperar(){
+window.onload = function recuperar(){ //recuperar dados
     let atualcor = localStorage.getItem('atualcor')
     if(atualcor){
         atual.style.color = atualcor
@@ -25,11 +25,15 @@ window.onload = function recuperar(){
     }
 }
 
+
+//variáveis
 let resultado = document.getElementById('resultado')
 let salario = localStorage.getItem('salario') ? Number(localStorage.getItem('salario')) : 1500;
 let atual = document.getElementById('atual')
 atual.innerHTML = `Dinheiro atual R$${salario.toFixed(2)}`
 
+
+//função colocar dinheiro
 function colocar(){
 
      let valor = document.getElementById('valor').value
@@ -61,6 +65,8 @@ function colocar(){
 
 }
 
+
+//resetar os dados
 function resetar(){
     localStorage.removeItem('salario')
     localStorage.removeItem('atualcor')
@@ -79,6 +85,9 @@ function resetar(){
     document.getElementById('gasto4').text = 'Gasto quatro (R$600,00) Clique e pague!'
     document.getElementById('gasto5').text = 'Gasto cinco (R$50,00) Clique e pague!'
 }
+
+
+//funções de gastos fixos
 
 function gasto1(){
 
@@ -151,6 +160,7 @@ function gasto3(){
         localStorage.setItem('atualcor', atual.style.color)
      }
 }
+
 function gasto4(){
 
     let valorgasto4 = 600
@@ -174,6 +184,7 @@ function gasto4(){
         localStorage.setItem('atualcor', atual.style.color)
      }
 }
+
 function gasto5(){
 
     let valorgasto5 = 50
