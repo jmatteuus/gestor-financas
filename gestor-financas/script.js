@@ -89,122 +89,28 @@ function resetar(){
 
 //funções de gastos fixos
 
-function gasto1(){
+function gastofixo(valor, idgasto, descricao){
 
-    let valorgasto1 = 150
-
-    if (salario <= 0 || valorgasto1 > salario){
-        alert('Você não tem dinheiro suficiente!')
+    if (salario < 0 || valor > salario){
+        alert ('Você não tem dinheiro suficiente')
         return
     }
 
-    salario-= valorgasto1
+    salario -= valor
     localStorage.setItem('salario', salario)
+
     atual.innerHTML = `Dinheiro atual R$${salario.toFixed(2)}`
-    let flista = document.getElementById('gasto1')
-    flista.text = `Gasto um (R$150,00) PAGO\u{1F973}`
-    localStorage.setItem('gasto1txt', flista.text)
-    if (salario <= 400){
+
+    let listagastos = document.getElementById('idgasto')
+    listagastos.text = `${descricao} PAGO\u{1F973}`
+    localStorage.setItem(`${idgasto}txt`, listagastos.text)
+
+    if (salario <=400){
         atual.style.color = 'red'
-        localStorage.setItem('atualcor', atual.style.color)
-     } else if (salario <= 800){
+    } else if (salario <= 800){
         atual.style.color = 'rgb(230, 186, 9)'
-        localStorage.setItem('atualcor', atual.style.color)
-     }
-}
-
-function gasto2(){
-
-    let valorgasto2 = 150
-
-    if (salario <= 0 || valorgasto2 > salario){
-        alert('Você não tem dinheiro suficiente!')
-        return
     }
 
-    salario-= valorgasto2
-    localStorage.setItem('salario', salario)
-    atual.innerHTML = `Dinheiro atual R$${salario.toFixed(2)}`
-    let llista = document.getElementById('gasto2')
-    llista.text = `Gasto dois (R$150,00) PAGO\u{1F973}`
-    localStorage.setItem('gasto2txt', llista.text)
-    if (salario <= 400){
-        atual.style.color = 'red'
-        localStorage.setItem('atualcor', atual.style.color)
-     } else if (salario <= 800){
-        atual.style.color = 'rgb(230, 186, 9)'
-        localStorage.setItem('atualcor', atual.style.color)
-     }
-}
+    localStorage.setItem('atualcor', atual.style.color)
 
-function gasto3(){
-
-    let valorgasto3 = 50
-
-    if (salario <= 0 || valorgasto3 > salario){
-        alert('Você não tem dinheiro suficiente!')
-        return
-    }
-
-    salario-= valorgasto3
-    localStorage.setItem('salario', salario)
-    atual.innerHTML = `Dinheiro atual R$${salario.toFixed(2)}`
-    let olista = document.getElementById('gasto3')
-    olista.text = `Gasto três (R$50,00) PAGO\u{1F973}`
-    localStorage.setItem('gasto3txt', olista.text)
-    if (salario <= 400){
-        atual.style.color = 'red'
-        localStorage.setItem('atualcor', atual.style.color)
-     } else if (salario <= 800){
-        atual.style.color = 'rgb(230, 186, 9)'
-        localStorage.setItem('atualcor', atual.style.color)
-     }
-}
-
-function gasto4(){
-
-    let valorgasto4 = 600
-
-    if (salario <= 0 || valorgasto4 > salario){
-        alert('Você não tem dinheiro suficiente!')
-        return
-    }
-
-    salario -= valorgasto4
-    localStorage.setItem('salario', salario)
-    atual.innerHTML = `Dinheiro atual R$${salario.toFixed(2)}`
-    let glista = document.getElementById('gasto4')
-    glista.text = `Gasto quatro (R$600,00) PAGO\u{1F973}`
-    localStorage.setItem('gasto4txt', glista.text)
-    if (salario <= 400){
-        atual.style.color = 'red'
-        localStorage.setItem('atualcor', atual.style.color)
-     } else if (salario <= 800){
-        atual.style.color = 'rgb(230, 186, 9)'
-        localStorage.setItem('atualcor', atual.style.color)
-     }
-}
-
-function gasto5(){
-
-    let valorgasto5 = 50
-
-    if (salario <= 0 || valorgasto5 > salario){
-        alert('Você não tem dinheiro suficiente!')
-        return
-    }
-
-    salario -= valorgasto5
-    localStorage.setItem('salario', salario)
-    atual.innerHTML = `Dinheiro atual R$${salario.toFixed(2)}`
-    let dlista = document.getElementById('gasto5')
-    dlista.text = `Gasto cinco (R$50,00) PAGO\u{1F973}`
-    localStorage.setItem('gasto5txt', dlista.text)
-    if (salario <= 400){
-        atual.style.color = 'red'
-        localStorage.setItem('atualcor', atual.style.color)
-     } else if (salario <= 800){
-        atual.style.color = 'rgb(230, 186, 9)'
-        localStorage.setItem('atualcor', atual.style.color)
-     }
 }
