@@ -1,8 +1,21 @@
 window.onload = function recuperar(){ //recuperar dados
+    
     let atualcor = localStorage.getItem('atualcor')
     if(atualcor){
         atual.style.color = atualcor
     }
+
+    let gastosSelect = document.getElementById('gastos');
+    for (let i = 0; i < gastosSelect.options.length; i++) {
+        let option = gastosSelect.options[i];
+        if (option.value.startsWith('gasto')) {
+            let listagastoText = localStorage.getItem(`${option.value}txt`);
+            if (listagastoText) {
+                option.text = listagastoText;
+            }
+        }
+    }
+
 }
 
 
@@ -87,8 +100,8 @@ function gastofixo(valor, idgasto, descricao){
     }
     localStorage.setItem('atualcor', atual.style.color)
 
-    let listagastos = document.getElementById('idgasto')
-    listagastos.text = `${descricao} PAGO\u{1F973}`
-    localStorage.setItem(`${idgasto}txt`, listagastos.text)
+    let listagasto = document.getElementById(idgasto)
+    listagasto.text = (`${descricao} PAGO\u{1F973}`)
+    localStorage.setItem(`${idgasto}txt`, listagasto.text)
 
 }
