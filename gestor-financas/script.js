@@ -1,5 +1,4 @@
-window.onload = function recuperar(){ //recuperar dados
-    
+window.onload = function recuperar(){ //recuperar dados  
     let atualcor = localStorage.getItem('atualcor')
     if(atualcor){
         atual.style.color = atualcor
