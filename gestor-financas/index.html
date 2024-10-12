@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Gestor de finanças</h1>
+    </header>
+    <section>
+        <div>
+            <p id="txt">
+                Dinheiro gasto: <input type="number" name="valor" id="valor">
+                <input type="button" value="Colocar" onclick="colocar()">
+            </p>
+            <p id="salario">
+                Você ganha R$1500,00
+            </p>
+        </div>
+        <div>
+            <select name="gastos" id="gastos" size="10">
+                <option value="gastos" id="fixo"> Gastos Fixos: </option>
+                <option value=""></option>
+                <option value="faculdade" id="faculdade" onclick="faculdade()"> Faculdade (R$150,00) Clique e pague!</option>
+                <option value="passagem" id="passagem" onclick="passagem()"> Passagem libras (R$150,00) Clique e pague!</option>
+                <option value="oculos" id="oculos" onclick="oculos()"> Óculos (R$50,00) Clique e pague!</option>
+                <option value="guardar" id="guardar" onclick="guardar()"> Guardar (R$600,00) Clique e pague!</option>
+                <option value="donativo" id="donativo" onclick="donativo()"> Donativo (R$50,00) Clique e pague! </option>
+            </select>
+        </div>
+        <div id="resultado">
+
+        </div>
+        <div id="atual">
+        </div>
+        <div>
+            <input id="botao" type="button" value="Resetar" onclick="resetar()">
+        </div>
+    </section>
+    <footer>
+        <script src="script.js"></script>
+    </footer>
+</body>
+</html>
