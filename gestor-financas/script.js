@@ -3,26 +3,6 @@ window.onload = function recuperar(){ //recuperar dados
     if(atualcor){
         atual.style.color = atualcor
     }
-    let gasto1txt = localStorage.getItem('gasto1txt')
-    if(gasto1txt){
-        document.getElementById('gasto1').text = gasto1txt
-    }
-    let gasto2txt = localStorage.getItem('gasto2txt')
-    if(gasto2txt){
-        document.getElementById('gasto2').text = gasto2txt
-    }
-    let gasto3txt = localStorage.getItem('gasto3txt')
-    if(gasto3txt){
-        document.getElementById('gasto3').text = gasto3txt
-    }
-    let gasto4txt = localStorage.getItem('gasto4txt')
-    if(gasto4txt){
-        document.getElementById('gasto4').text = gasto4txt
-    }
-    let gasto5txt = localStorage.getItem('gasto5txt') 
-    if(gasto5txt){
-        document.getElementById('gasto5').text = gasto5txt
-    }
 }
 
 
@@ -100,16 +80,15 @@ function gastofixo(valor, idgasto, descricao){
 
     atual.innerHTML = `Dinheiro atual R$${salario.toFixed(2)}`
 
-    let listagastos = document.getElementById('idgasto')
-    listagastos.text = `${descricao} PAGO\u{1F973}`
-    localStorage.setItem(`${idgasto}txt`, listagastos.text)
-
-    if (salario <=400){
+    if (salario <= 400){
         atual.style.color = 'red'
     } else if (salario <= 800){
         atual.style.color = 'rgb(230, 186, 9)'
     }
-
     localStorage.setItem('atualcor', atual.style.color)
+
+    let listagastos = document.getElementById('idgasto')
+    listagastos.text = `${descricao} PAGO\u{1F973}`
+    localStorage.setItem(`${idgasto}txt`, listagastos.text)
 
 }
