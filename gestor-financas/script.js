@@ -87,8 +87,7 @@ function resetar(){
 }
 
 
-//funções de gastos fixos
-
+//função de gastos fixos
 function gastofixo(valor, idgasto, descricao){
 
     if (salario < 0 || valor > salario){
