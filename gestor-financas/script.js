@@ -60,18 +60,7 @@ function colocar(){
 
 //resetar os dados
 function resetar(){
-    localStorage.removeItem('salario')
-    localStorage.removeItem('atualcor')
-    localStorage.removeItem('gasto1txt')
-    localStorage.removeItem('gasto2txt')
-    localStorage.removeItem('gasto3txt')
-    localStorage.removeItem('gasto4txt')
-    localStorage.removeItem('gasto5txt')
-    localStorage.removeItem('gasto1pago')
-    localStorage.removeItem('gasto2pago')
-    localStorage.removeItem('gasto3pago')
-    localStorage.removeItem('gasto4pago')
-    localStorage.removeItem('gasto5pago')
+    localStorage.clear()
     salario = 1500
     atual.innerHTML = `Dinheiro atual R$${salario.toFixed(2)}`
     atual.style.color = 'green'
