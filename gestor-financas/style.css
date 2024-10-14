@@ -6,7 +6,16 @@ body{
     background-color: rgb(29, 105, 246);
     color: whitesmoke;
     font-family: arial;
-    font-size: 14px;
+}
+@media (max-width: 768px){
+    body{
+        font-size: 14px;
+    }
+}
+@media (min-width: 769px){
+    body{
+        font-size: 16px;
+    }
 }
 section{
     background-color: whitesmoke;
