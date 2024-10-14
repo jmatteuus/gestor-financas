@@ -67,6 +67,11 @@ function resetar(){
     localStorage.removeItem('gasto3txt')
     localStorage.removeItem('gasto4txt')
     localStorage.removeItem('gasto5txt')
+    localStorage.removeItem('gasto1pago')
+    localStorage.removeItem('gasto2pago')
+    localStorage.removeItem('gasto3pago')
+    localStorage.removeItem('gasto4pago')
+    localStorage.removeItem('gasto5pago')
     salario = 1500
     atual.innerHTML = `Dinheiro atual R$${salario.toFixed(2)}`
     atual.style.color = 'green'
@@ -81,6 +86,13 @@ function resetar(){
 
 //função de gastos fixos
 function gastofixo(valor, idgasto, descricao){
+
+    let gastoPago = localStorage.getItem(`${idgasto}pago`) ? true : false
+
+    if (gastoPago) {
+        alert('Conta já paga!')
+        return
+    }
 
     if (salario < 0 || valor > salario){
         alert ('Você não tem dinheiro suficiente')
@@ -102,5 +114,7 @@ function gastofixo(valor, idgasto, descricao){
     let listagasto = document.getElementById(idgasto)
     listagasto.text = (`${descricao} PAGO\u{1F973}`)
     localStorage.setItem(`${idgasto}txt`, listagasto.text)
+
+    localStorage.setItem(`${idgasto}pago`, true)
 
 }
