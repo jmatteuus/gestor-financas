@@ -8,11 +8,6 @@ body{
     font-family: arial;
     font-size: 13px;
 }
-@media (max-width: 768px){
-    body{
-        padding: 10px;
-    }
-}
 section{
     background-color: whitesmoke;
     color: black;
