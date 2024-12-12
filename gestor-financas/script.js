@@ -22,7 +22,7 @@ window.onload = function recuperar(){ //recuperar dados
 let resultado = document.getElementById('resultado')
 let salario = localStorage.getItem('salario') ? Number(localStorage.getItem('salario')) : 1500;
 let atual = document.getElementById('atual')
-atual.innerHTML = `Dinheiro atual R$${salario.toFixed(2)}`
+atual.textContent = `Dinheiro atual R$${salario.toFixed(2)}`
 
 
 //função colocar dinheiro
@@ -44,8 +44,8 @@ function colocar(){
      salario -= valor
      localStorage.setItem('salario', salario)
 
-     resultado.innerHTML = `Você gastou R$${valor.toFixed(2)} agora você tem R$${salario.toFixed(2)}`
-     atual.innerHTML = `Dinheiro atual R$${salario.toFixed(2)}`
+     resultado.textContent = `Você gastou R$${valor.toFixed(2)} agora você tem R$${salario.toFixed(2)}`
+     atual.textContent = `Dinheiro atual R$${salario.toFixed(2)}`
 
      if (salario <= 400){
         atual.style.color = 'red'
@@ -62,9 +62,9 @@ function colocar(){
 function resetar(){
     localStorage.clear()
     salario = 1500
-    atual.innerHTML = `Dinheiro atual R$${salario.toFixed(2)}`
+    atual.textContent = `Dinheiro atual R$${salario.toFixed(2)}`
     atual.style.color = 'green'
-    resultado.innerHTML = ''
+    resultado.textContent = ''
     document.getElementById('gasto1').text = 'Gasto um (R$150,00) Clique e pague!'
     document.getElementById('gasto2').text = 'Gasto dois (R$150,00) Clique e pague!'
     document.getElementById('gasto3').text = 'Gasto três (R$50,00) Clique e pague!'
@@ -91,7 +91,7 @@ function gastofixo(valor, idgasto, descricao){
     salario -= valor
     localStorage.setItem('salario', salario)
 
-    atual.innerHTML = `Dinheiro atual R$${salario.toFixed(2)}`
+    atual.textContent = `Dinheiro atual R$${salario.toFixed(2)}`
 
     if (salario <= 400){
         atual.style.color = 'red'
