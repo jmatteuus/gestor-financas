@@ -3,41 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestor finanças</title>
+    <title>Gestor de Finanças</title>
     <link rel="stylesheet" href="gestor-financas/style.css">
 </head>
 <body>
     <header>
-        <h1>Gestor de finanças</h1>
+        <h1>Gestor de Finanças</h1>
     </header>
     <section>
         <div>
-            <p id="txt">
-                Dinheiro gasto: <input type="number" name="valor" id="valor">
-                <input type="button" value="Colocar" onclick="colocar()">
-            </p>
-            <p id="valoragastar">
-                Você pode gastar R$1500,00
-            </p>
+            <label for="valor">Dinheiro gasto:</label>
+            <input type="number" name="valor" id="valor">
+            <button onclick="colocar()">Colocar</button>
         </div>
+        <p id="valoragastar">Você pode gastar R$1500,00</p>
         <div>
             <select name="gastos" id="gastos" size="10">
-                <option value="gastos" id="fixo"> Gastos Fixos: </option>
-                <option value=""></option>
-                <option value="gasto1" id="gasto1" onclick="gastofixo(150, 'gasto1', 'Gasto um (R$150,00)')"> Gasto um (R$150,00) Clique e pague!</option>
-                <option value="gasto2" id="gasto2" onclick="gastofixo(150, 'gasto2', 'Gasto dois (R$150,00)')"> Gasto dois (R$150,00) Clique e pague!</option>
-                <option value="gasto3" id="gasto3" onclick="gastofixo(50, 'gasto3', 'Gasto três (R$50,00)')"> Gasto três (R$50,00) Clique e pague!</option>
-                <option value="gasto4" id="gasto4" onclick="gastofixo(600, 'gasto4', 'Gasto quatro (R$600,00)')"> Gasto quatro (R$600,00) Clique e pague!</option>
-                <option value="gasto5" id="gasto5" onclick="gastofixo(50, 'gasto5', 'Gasto cinco (R$50,00)')"> Gasto cinco (R$50,00) Clique e pague! </option>
+                <option value="gastos" id="fixo">Gastos Fixos:</option>
+                <option value="gasto1" id="gasto1" onclick="gastofixo(150, 'gasto1', 'Gasto um (R$150,00)')">Gasto um (R$150,00) Clique e pague!</option>
+                <option value="gasto2" id="gasto2" onclick="gastofixo(150, 'gasto2', 'Gasto dois (R$150,00)')">Gasto dois (R$150,00) Clique e pague!</option>
+                <option value="gasto3" id="gasto3" onclick="gastofixo(50, 'gasto3', 'Gasto três (R$50,00)')">Gasto três (R$50,00) Clique e pague!</option>
+                <option value="gasto4" id="gasto4" onclick="gastofixo(600, 'gasto4', 'Gasto quatro (R$600,00)')">Gasto quatro (R$600,00) Clique e pague!</option>
+                <option value="gasto5" id="gasto5" onclick="gastofixo(50, 'gasto5', 'Gasto cinco (R$50,00)')">Gasto cinco (R$50,00) Clique e pague!</option>
             </select>
         </div>
-        <div id="resultado">
-
-        </div>
-        <div id="atual">
-        </div>
+        <div id="resultado"></div>
+        <div id="atual"></div>
         <div>
-            <input id="botao" type="button" value="Resetar" onclick="resetar()">
+            <button id="botao" onclick="resetar()">Resetar</button>
         </div>
     </section>
     <footer>
